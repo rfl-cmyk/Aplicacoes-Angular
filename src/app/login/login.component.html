@@ -1,0 +1,26 @@
+<div class="container box">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Login</li>
+    </ol>
+  </nav>
+
+  <br/>
+
+  <div class="login">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input [(ngModel)]="usuario.nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">usuário válido: Rafael</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Senha</label>
+      <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">password: 123456</small>
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="fazerLogin()">Login</button>
+  </div>
+
+</div>

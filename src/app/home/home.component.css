@@ -1,0 +1,4 @@
+.card-text li::before {
+  content: url(../../assets/images/check.png);
+  margin-right: 5px;
+}

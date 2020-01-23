@@ -1,0 +1,12 @@
+.logo {
+  cursor: pointer;
+}
+
+.header {
+  height: 200px;
+  background-color: #343a42;
+}
+
+.header img {
+  width: 300px;
+}

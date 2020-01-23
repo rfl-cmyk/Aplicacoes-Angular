@@ -1,0 +1,25 @@
+.contato {
+    width: 560px;
+    margin: 0 auto;
+}
+
+form button {
+    margin-right: 10px;
+}
+
+form .col-md-6, form .col-md-4 {
+    padding: 0;
+}
+
+.pad-left {
+    padding-left: 12px !important;
+}
+
+@media(max-width: 767px) {
+    .contato {
+        width:290px;
+    }
+    .pad-left {
+        padding-left: 0px !important;
+    }
+}

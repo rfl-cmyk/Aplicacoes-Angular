@@ -1,0 +1,27 @@
+<div class="container box">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">C.R.U.D.</li>
+    </ol>
+  </nav>
+
+  <br/>
+
+  <app-edit></app-edit>
+
+  <br/>
+
+  <div class="card mt-2" *ngFor="let contato of contatos | async">
+    <div class="card-body">
+      <h5 class="card-title">{{ contato.nome }}</h5>
+      <p class="card-text">{{ contato.telefone }}</p>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-success" (click)="edit(contato, contato.key)">Editar</button>
+      <button type="button" class="btn btn-danger ml-2" (click)="delete(contato.key)">Deletar</button>
+    </div>
+  </div>
+
+</div>

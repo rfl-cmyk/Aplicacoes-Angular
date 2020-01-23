@@ -1,0 +1,36 @@
+<div class="container box">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/produtos">Produtos</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detalhes</li>
+    </ol>
+  </nav>
+
+  <br/>
+
+  <div class="card col-12 col-sm-12 col-md-12">
+    <div class="row no-gutters">
+      <div class="col-md-5">
+        <img [src]="oProduto['image']" class="card-img" alt="...">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title">{{ oProduto['nome'] }}</h5>
+          <p class="card-text light-green"><strong>{{ oProduto['preco'] | currency:'R$' }}</strong></p>
+          <hr/>
+          <p class="card-text">{{ oProduto['descricao'] }}</p>
+          <button routerLink="pergunta" class="btn btn-warning">perguntar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-12">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,23 @@
+<div class="container box">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Produtos</li>
+    </ol>
+  </nav>
+
+  <br/>
+
+  <div *ngFor="let produto of produtos" class="col-lg-3 col-md-4 col-sm-6 col-12">
+    <div class="card">
+      <img [src]="produto.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ produto.nome }}</h5>
+        <ul class="card-text">
+          <li>{{ produto.preco | currency:'R$' }}</li>
+        </ul>
+        <a [routerLink]="['produto', produto.id]" class="btn btn-dark">detalhes</a>
+      </div>
+    </div>
+  </div>
+</div>

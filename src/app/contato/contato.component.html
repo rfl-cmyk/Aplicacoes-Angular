@@ -1,0 +1,69 @@
+<div class="container box">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Contato</li>
+    </ol>
+  </nav>
+
+  <br/>
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="contato">
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Nome" formControlName="nome" (blur)="aplicaCssErro('nome', formulario)" [ngClass]="{'inputError': validaNome}" />
+      <div class="msgError" *ngIf="validaNome"><p>O nome deve conter mais que três caracteres!</p></div>
+    </div>
+
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="E-mail" formControlName="email" (blur)="aplicaCssErro('email', formulario)" [ngClass]="{'inputError': validaEmail}" />
+      <div class="msgError" *ngIf="validaEmail"><p>Digite um e-mail válido!</p></div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <input type="phone" class="form-control" placeholder="Telefone" formControlName="telefone" (blur)="aplicaCssErro('telefone', formulario)" [ngClass]="{'inputError': validaTelefone} " [textMask]="{mask: maskTEL}" />
+      <div class="msgError" *ngIf="validaTelefone"><p>Digite um telefone válido!</p></div>
+    </div>
+
+    <div formGroupName="endereco">
+      <div class="form-group col-md-6 pad-left">
+        <input class="form-control" type="text" placeholder="Cep" formControlName="cep" (blur)="aplicaCssErro('endereco.cep', formulario); consultaCep()" [ngClass]="{'inputError': validaCep}" [textMask]="{mask: maskCEP}" />
+        <div class="msgError" *ngIf="validaCep"><p>Digite um CEP válido!</p></div>
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Rua" formControlName="rua" (blur)="aplicaCssErro('endereco.rua', formulario)" [ngClass]="{'inputError': validaRua}" />
+        <div class="msgError" *ngIf="validaRua"><p>Digite um endereço válido!</p></div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <input class="form-control" type="text" placeholder="Número" formControlName="numero" (blur)="aplicaCssErro('endereco.numero', formulario)" [ngClass]="{'inputError': validaNumero}" />
+        <div class="msgError" *ngIf="validaNumero"><p>Digite um número válido!</p></div>
+      </div>
+
+      <div class="form-group col-md-6 pad-left">
+        <input class="form-control" type="text" placeholder="Complemento" formControlName="complemento" />
+      </div>
+
+      <div class="form-group col-md-4">
+        <input class="form-control" type="text" placeholder="Bairro" formControlName="bairro" (blur)="aplicaCssErro('endereco.bairro', formulario)" [ngClass]="{'inputError': validaBairro}" />
+        <div class="msgError" *ngIf="validaBairro"><p>Digite um bairro!</p></div>
+      </div>
+
+      <div class="form-group col-md-4 pad-left">
+        <input class="form-control" type="text" placeholder="Cidade" formControlName="cidade" (blur)="aplicaCssErro('endereco.cidade', formulario)" [ngClass]="{'inputError': validaCidade}" />
+        <div class="msgError" *ngIf="validaCidade"><p>Digite um cidade!</p></div>
+      </div>
+
+      <div class="form-group col-md-4 pad-left">
+        <input class="form-control" type="text" placeholder="Estado" formControlName="estado" (blur)="aplicaCssErro('endereco.estado', formulario)" [ngClass]="{'inputError': validaEstado}" />
+        <div class="msgError" *ngIf="validaEstado"><p>Digite um estado!</p></div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="" (click)="resetar()" class="btn btn-secondary">Limpar</button>
+  </form>
+
+  </div>
